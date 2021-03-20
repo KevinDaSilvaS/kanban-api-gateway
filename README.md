@@ -13,7 +13,7 @@ Api gateway using express-gateway and docker to deploy my mini kanban project
 docker-compose up -d
 ```
 
-<h3> 3 -- Acess:</h3> [http://localhost:8737/boards](http://localhost:8737/boards)<h3>(if you compose up mini kanban) or</h3> [http://localhost:8737/ip](http://localhost:8737/ip)<h3>(example route) </h3>
+<h3> 3 -- Acess:</h3> http://localhost:8737/boards<h3>(if you compose up mini kanban) or</h3> http://localhost:8737/ip <h3>(example route) </h3>
 
 If result is in json format the gateway was properly setted 
 
