@@ -1,0 +1,16 @@
+version: '3.3'
+
+services: 
+    kanban_gateway:
+        image: kanban-gateway
+        build: 
+            context: .
+        ports: 
+            - "${PORT}:8737"
+            - "${SND_PORT}:9878"
+        networks:
+            - kanban
+networks:
+  kanban:
+      name: kanban
+      driver: overlay
