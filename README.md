@@ -16,7 +16,7 @@ docker-compose up -d
 <h3> 3 Acess: </h3>
 
 ```
-http://localhost: 8737/board (if you compose up mini kanban)
+http://localhost:8737/board (if you compose up mini kanban)
 ```
 
 <h3> 3 Or acess: </h3>
