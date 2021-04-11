@@ -19,7 +19,11 @@ serviceEndpoints:
     url: 'http://kanban_kanbanapp_1:1747'
 policies:
   - basic-auth
-  - cors
+  - cors:
+      - action:
+          origin: '*'
+          methods: 'GET,PATCH,POST,DELETE'
+          allowedHeaders: '*'
   - expression
   - key-auth
   - log
