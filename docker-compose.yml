@@ -12,5 +12,5 @@ services:
             - kanban
 networks:
   kanban:
-      name: kanban
       driver: overlay
+      attachable: true
