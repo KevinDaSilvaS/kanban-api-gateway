@@ -12,11 +12,19 @@ apiEndpoints:
     host: localhost
     methods: 'GET,POST,PATCH,DELETE' 
     paths: '/*'
+  
+  comments_kanban_api:
+    host: localhost
+    methods: 'GET,POST,PATCH,DELETE' 
+    paths: '/comments'
+
 serviceEndpoints:
   httpbin:
     url: 'https://httpbin.org'
   kanban:
     url: 'http://kanban_kanbanapp_1:1747'
+  comments-kanban:
+    url: 'http://comments-kanban_comments_1:8835'
 policies:
   - basic-auth
   - cors:
@@ -42,7 +50,7 @@ pipelines:
               serviceEndpoint: httpbin 
               changeOrigin: true
 
-  second:
+  service-kanban:
     apiEndpoints:
       - kanban_api
     policies:
@@ -50,3 +58,12 @@ pipelines:
           - action:
               serviceEndpoint: kanban 
               changeOrigin: true
+
+  service-comments-kanban:
+    apiEndpoints:
+      - comments_kanban_api
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: comments-kanban 
+              changeOrigin: true  
