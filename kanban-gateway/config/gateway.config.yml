@@ -8,15 +8,15 @@ apiEndpoints:
     host: localhost
     paths: '/ip'
 
-  kanban_api:
-    host: localhost
-    methods: 'GET,POST,PATCH,DELETE' 
-    paths: '/*'
-  
   comments_kanban_api:
     host: localhost
     methods: 'GET,POST,PATCH,DELETE' 
-    paths: '/comments'
+    paths: ['/comments/*', '/comments']
+
+  kanban_api:
+    host: localhost
+    methods: 'GET,POST,PATCH,DELETE' 
+    paths: ['/boards/*', '/tasks/*', '/boards', '/tasks']
 
 serviceEndpoints:
   httpbin:
@@ -27,11 +27,11 @@ serviceEndpoints:
     url: 'http://comments-kanban_comments_1:8835'
 policies:
   - basic-auth
-  - cors:
-      - action:
-          origin: '*'
-          methods: 'GET,PATCH,POST,DELETE'
-          allowedHeaders: '*'
+  - cors #:
+      #- action:
+          #origin: "*"
+          #methods: "GET,PATCH,POST,DELETE"
+          #allowedHeaders: "*"
   - expression
   - key-auth
   - log
