@@ -27,11 +27,12 @@ serviceEndpoints:
     url: 'http://comments-kanban_comments_1:8835'
 policies:
   - basic-auth
-  - cors #:
-      #- action:
-          #origin: "*"
-          #methods: "GET,PATCH,POST,DELETE"
-          #allowedHeaders: "*"
+  - cors:
+      - action:
+          origin: '*'
+          methods: 'GET,PATCH,POST,DELETE'
+          allowedHeaders: '*'
+          credentials: true
   - expression
   - key-auth
   - log
