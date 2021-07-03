@@ -1,3 +1,4 @@
+#THIS REPOSITORY IS DEPRECATED IN MINI-KANBAN TO KNOW MORE AND SEE THE CURRENT GATEWAY BEING USED CHECK THE FOLLOWING [LINK](https://github.com/KevinDaSilvaS/kanban-gateway) 
 # kanban-api-gateway
 Api gateway using express-gateway and docker to deploy my mini kanban project
 
